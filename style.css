@@ -38,6 +38,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .nav-logo {
@@ -45,6 +46,7 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    z-index: 101;
 }
 
 nav ul {
@@ -53,6 +55,7 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    margin: 0;
 }
 
 nav a {
@@ -63,6 +66,7 @@ nav a {
     padding: 0.5rem 1rem;
     border-radius: 10px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    display: block;
 }
 
 nav a:hover {
@@ -71,12 +75,15 @@ nav a:hover {
     transform: translateY(-2px);
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu - Default Hidden */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     padding: 0.5rem;
+    z-index: 101;
+    background: rgba(139, 69, 19, 0.5);
+    border-radius: 5px;
 }
 
 .hamburger span {
@@ -86,6 +93,7 @@ nav a:hover {
     margin: 3px 0;
     border-radius: 3px;
     transition: all 0.3s;
+    display: block;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -454,46 +462,54 @@ footer {
 
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
+    /* Tampilkan Hamburger */
     .hamburger {
-        display: flex;
+        display: flex !important;
     }
 
+    /* Sembunyikan menu default */
     nav ul {
         position: fixed;
         left: -100%;
-        top: 60px;
+        top: 70px;
         flex-direction: column;
-        background: rgba(139, 69, 19, 0.95);
+        background: rgba(139, 69, 19, 0.98);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
-        transition: all 0.3s;
+        transition: left 0.3s ease;
         gap: 0;
         padding: 2rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        z-index: 99;
     }
 
+    /* Tampilkan menu saat active */
     nav ul.active {
-        left: 0;
+        left: 0 !important;
     }
 
     nav ul li {
-        padding: 1rem 0;
+        padding: 0.8rem 0;
+        width: 100%;
     }
 
     nav a {
         display: block;
         padding: 1rem;
         font-size: 1.1rem;
+        width: 100%;
+    }
+
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: none;
     }
 
     .hero h2 {
         font-size: 1.5rem;
-    }
-    
-    nav ul {
-        gap: 0;
     }
     
     .hero,
@@ -503,6 +519,14 @@ footer {
 
     .nav-logo {
         font-size: 1.2rem;
+    }
+
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
     }
 }
 
