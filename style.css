@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #1a1a1a;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.2);
+}
+
+.header {
+    background: rgba(139, 69, 19, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(139, 69, 19, 0.3);
+    position: relative;
+    z-index: 10;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+nav {
+    background: transparent;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* SECTION BERANDA dengan Background */
+.hero {
+    padding: 4rem 1rem;
+    padding-top: 8rem;
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin-top: -70px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.7) 0%, rgba(205, 133, 63, 0.6) 100%);
+    z-index: 0;
+}
+
+.hero-glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: rgba(139, 69, 19, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+}
+
+.btn:hover {
+    background: rgba(139, 69, 19, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+}
+
+/* SECTION MENU dengan Background */
+.section {
+    padding: 4rem 1rem;
+    position: relative;
+    min-height: 100vh;
+}
+
+#menu {
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(210, 105, 30, 0.85) 0%, rgba(222, 184, 135, 0.85) 100%);
+    z-index: 0;
+}
+
+/* SECTION TENTANG KAMI dengan Background */
+#about {
+    background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 69, 19, 0.8) 0%, rgba(160, 82, 45, 0.8) 100%);
+    z-index: 0;
+}
+
+/* SECTION KONTAK dengan Background */
+#contact {
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(93, 64, 55, 0.9) 0%, rgba(62, 39, 35, 0.9) 100%);
+    z-index: 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.menu-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.2);
+    transition: all 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 40px rgba(139, 69, 19, 0.3);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.menu-image {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Rasio 1:1 untuk foto 1024x1024 */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Background images untuk setiap menu - Ganti dengan path foto Anda */
+.menu-card:nth-child(1) .menu-image {
+    background-image: url('images/sop_buntut.png');
+}
+
+.menu-card:nth-child(2) .menu-image {
+    background-image: url('images/sop_daging_sapi.png');
+}
+
+.menu-card:nth-child(3) .menu-image {
+    background-image: url('images/soto_daging_sapi_santan.png');
+}
+
+.menu-card:nth-child(4) .menu-image {
+    background-image: url('images/soto_ayam_kampung.png');
+}
+
+.menu-card:nth-child(5) .menu-image {
+    background-image: url('images/udang_gulai_aceh.png');
+}
+
+.menu-card:nth-child(6) .menu-image {
+    background-image: url('images/ikan_gulai_aceh.png');
+}
+
+.menu-card:nth-child(7) .menu-image {
+    background-image: url('images/bebek_gulai_putih.png');
+}
+
+.menu-card:nth-child(8) .menu-image {
+    background-image: url('images/tumis_bunga_pepaya.png');
+}
+
+.menu-content {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-content h3 {
+    color: #3E2723;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.menu-content p {
+    color: #5D4037;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.3rem;
+    color: #D84315;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.about-glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(139, 69, 19, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.about-glass p {
+    font-size: 1.1rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.about-glass strong {
+    color: #FFE4B5;
+}
+
+.contact-glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-glass h2 {
+    color: white;
+}
+
+.contact-glass p {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contact-item i {
+    font-size: 2rem;
+}
+
+footer {
+    background: rgba(46, 46, 46, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    position: relative;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero,
+    .section {
+        background-attachment: scroll;
+    }
+}
+
+/* Loading animation untuk background images */
+.hero,
+#menu,
+#about,
+#contact {
+    background-color: #8B4513;
+}
+
+/* Smooth transition */
+.section,
+.hero {
+    transition: background-image 0.3s ease-in-out;
+}
